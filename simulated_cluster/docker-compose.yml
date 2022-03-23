@@ -1,0 +1,127 @@
+version: '3.4'
+
+services:
+  cluster-base:
+    profiles: ["base"]
+    build:
+      context: ./
+      dockerfile: ./cluster_base.Dockerfile
+    image: redsofauid/cluster-base:latest
+    environment:
+      - TZ=America/Moncton
+
+  spark-base:
+    profiles: ["base"]
+    build:
+      context: ./
+      dockerfile: ./spark_base.Dockerfile
+    image: redsofauid/spark-base:latest
+    environment:
+      - TZ=America/Moncton
+
+  jupyterlab:
+    profiles: ["cluster"]
+    build:
+      context: ./
+      dockerfile: ./jupyter.Dockerfile
+    image: redsofauid/jupyter:latest
+    container_name: jupyterlab
+    environment:
+      - TZ=America/Moncton
+    ports:
+      - 8888:8888
+    volumes:
+      - ../data:/data
+      - ../src:/src
+
+  spark-master:
+    profiles: ["cluster"]
+    build:
+      context: ./
+      dockerfile: ./spark_master.Dockerfile
+    image: redsofauid/spark-master:latest
+    container_name: spark-master
+    environment:
+      - TZ=America/Moncton
+    ports:
+      - 4040:6066
+      - 8080:8080
+      - 7077:7077
+    volumes:
+      - ../data:/data
+      - ../src:/src
+
+  spark-worker-1:
+    profiles: ["cluster"]
+    build:
+      context: ./
+      dockerfile: ./spark_worker.Dockerfile
+    image: redsofauid/spark-worker:latest
+    container_name: spark-worker-1
+    environment:
+      - TZ=America/Moncton
+      - SPARK_WORKER_CORES=2
+      - SPARK_WORKER_MEMORY=3g
+    ports:
+      - 8081:8081
+    volumes:
+      - ../data:/data
+      - ../src:/src
+    depends_on:
+      - spark-master
+
+  spark-worker-2:
+    profiles: ["cluster"]
+    build:
+      context: ./
+      dockerfile: ./spark_worker.Dockerfile
+    image: redsofauid/spark-worker:latest
+    container_name: spark-worker-2
+    environment:
+      - TZ=America/Moncton
+      - SPARK_WORKER_CORES=2
+      - SPARK_WORKER_MEMORY=3g
+    ports:
+      - 8082:8081
+    volumes:
+      - ../data:/data
+      - ../src:/src
+    depends_on:
+      - spark-master
+
+  spark-worker-3:
+    profiles: ["cluster"]
+    build:
+      context: ./
+      dockerfile: ./spark_worker.Dockerfile
+    image: redsofauid/spark-worker:latest
+    container_name: spark-worker-3
+    environment:
+      - TZ=America/Moncton
+      - SPARK_WORKER_CORES=2
+      - SPARK_WORKER_MEMORY=3g
+    ports:
+      - 8083:8081
+    volumes:
+      - ../data:/data
+      - ../src:/src
+    depends_on:
+      - spark-master
+
+  spark-dev:
+    profiles: ["dev"]
+    build:
+      context: ./
+      dockerfile: ./spark_dev.Dockerfile
+    image: redsofauid/spark-dev:latest
+    container_name: spark-dev
+    environment:
+      - TZ=America/Moncton
+    ports:
+      - 8080:8080
+      - 7077:7077
+    volumes:
+      - ../data:/data
+      - ../src:/src
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
