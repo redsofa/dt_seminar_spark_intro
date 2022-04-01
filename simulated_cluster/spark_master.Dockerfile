@@ -2,6 +2,9 @@ FROM redsofauid/spark-base
 
 # -- Runtime
 
+ENV USER ds
+USER $USER
+
 ARG spark_master_web_ui=8080
 
 ENV SPARK_MASTER_OPTS "-Dspark.master.rest.enabled=true"

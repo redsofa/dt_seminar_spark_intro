@@ -3,6 +3,11 @@ Reference
 * https://www.kdnuggets.com/2020/07/apache-spark-cluster-docker.html
 
 
+Purpose
+-------
+* This set of Docker configuration files is for demonstration purposes only. Not for production use.
+
+
 Building images
 ---------------
 * make sure you are in the `./simulated_cluster` directory

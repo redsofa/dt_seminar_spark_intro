@@ -1,6 +1,10 @@
 FROM redsofauid/spark-base
 
+ENV USER ds
+
 # -- Layer: Build tools (MVN/Scala/R)
+
+USER root
 
 WORKDIR /tmp
 
@@ -22,5 +26,5 @@ ENV PATH "$PATH:/usr/bin/scala-2.12.15/bin:/usr/bin/apache-maven-3.8.4/bin"
 
 
 # -- Runtime
-
+USER $USER
 WORKDIR /src
