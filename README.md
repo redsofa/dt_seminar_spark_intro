@@ -1,1 +1,1 @@
-# dt_seminar_spark_intro
+# Introduction to Apache Spark - Tech Talk Companion Repository
