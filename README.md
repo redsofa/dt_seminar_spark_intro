@@ -23,5 +23,5 @@ Through demos we will cover:
 
 # Jupyter Notebooks 
 
-* Car data ETL notebook : [./src/jupyter/1_car_data_ETL.ipynb](1_car_data_ETL.ipynb) file.
-* Car data Predictions notebook : [./src/jupyter/2_car_data_predictions_MLlib.ipynb](2_car_data_predictions_MLlib.ipynb) file.
+* Car data ETL notebook : [./src/jupyter/1_car_data_ETL.ipynb](./src/jupyter/1_car_data_ETL.ipynb) file.
+* Car data Predictions notebook : [./src/jupyter/2_car_data_predictions_MLlib.ipynb](./src/jupyter/2_car_data_predictions_MLlib.ipynb) file.
