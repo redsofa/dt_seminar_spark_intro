@@ -21,6 +21,13 @@ Through demos we will cover:
 * See the [./simulated_cluster/README.md](simulated_cluster/README.md) file.
 
 
+# Spark-submit 
+
+* Scala (HelloWorld) job spark-submit shell script : [./src/scala/spark-jobs/helloworld/submit_client.sh](./src/scala/spark-jobs/helloworld/submit_client.sh).
+* Java (HelloWorld) job spark-submit shell script : [./src/java/spark-jobs/helloworld/submit_cluster.sh](./src/java/spark-jobs/helloworld/submit_cluster.sh).
+* Python (HelloWorld) job spark-submit shell script : [./src/python/spark-jobs/helloworld/submit_client.sh](./src/python/spark-jobs/helloworld/submit_client.sh).
+
+
 # Jupyter Notebooks 
 
 * Car data ETL notebook : [./src/jupyter/1_car_data_ETL.ipynb](./src/jupyter/1_car_data_ETL.ipynb) file.
