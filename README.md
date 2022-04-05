@@ -32,3 +32,9 @@ Through demos we will cover:
 
 * Car data ETL notebook : [./src/jupyter/1_car_data_ETL.ipynb](./src/jupyter/1_car_data_ETL.ipynb) file.
 * Car data Predictions notebook : [./src/jupyter/2_car_data_predictions_MLlib.ipynb](./src/jupyter/2_car_data_predictions_MLlib.ipynb) file.
+
+
+# Additional Jupyter Notebooks 
+
+* Python HelloWorld notebook : [./src/jupyter/helloworld.ipynb](./src/jupyter/helloworld.ipynb) file.
+* Common ETL Operations : [./src/jupyter/common_ops.ipynb](./src/jupyter/common_ops.ipynb) file.
