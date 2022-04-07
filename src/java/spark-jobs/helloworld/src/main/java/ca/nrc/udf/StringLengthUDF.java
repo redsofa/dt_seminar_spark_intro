@@ -3,14 +3,14 @@ package ca.nrc.udf;
 import org.apache.spark.sql.SparkSession;
 import org.apache.spark.sql.api.java.UDF1;
 
-public class StringLengthUDF implements UDF1<String, Long> {
+public class StringLengthUDF implements UDF1<String, Integer> {
 
     @Override
-    public Long call(String str) throws Exception {
+    public Integer call(String str) throws Exception {
         if(str != null && !str.trim().isEmpty()){
-            return new Long(str.length());
+            return str.length();
         }else{
-            return 0L;
+            return 0;
         }
     }
 }
