@@ -26,7 +26,7 @@ Running development node
 * docker-compose run spark-dev
 
 
-URLs
+URLs - (Assumes spark-master resolves properly)
 ----
 * JupyterLab at : http://spark-master:8888/
 * Spark master at : http://spark-master:8080/
